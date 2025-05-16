@@ -1,0 +1,105 @@
+/* Responsive CSS for better display on mobile, tablet, and laptop screens */
+
+/* Base styles for body and main containers */
+body, main {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Make images and videos responsive */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Navigation adjustments */
+header, nav {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsive typography */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+/* Layout adjustments for smaller screens */
+@media (max-width: 1024px) {
+  .container, .max-w-7xl, .mx-auto {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 100%;
+  }
+  header .flex {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  header .hidden.lg\\:flex {
+    display: none !important;
+  }
+  header a {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 640px) {
+  main {
+    padding: 0 0.5rem;
+  }
+  header {
+    padding: 0.5rem;
+  }
+  .text-3xl {
+    font-size: 1.5rem !important;
+  }
+  .text-5xl {
+    font-size: 2rem !important;
+  }
+  .flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  .lg\\:w-1\\/2 {
+    width: 100% !important;
+  }
+  .lg\\:mx-20 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .lg\\:justify-start {
+    justify-content: center !important;
+  }
+  .hidden.lg\\:flex {
+    display: none !important;
+  }
+  button#playNowBtn {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+}
+
+/* Ensure footer is responsive */
+footer {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Utility classes for auto sync and layout consistency */
+.flex, .flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Scroll smooth for all devices */
+html {
+  scroll-behavior: smooth;
+}
