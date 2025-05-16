@@ -1,0 +1,31 @@
+.staff-card {
+    width: 150px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+}
+
+.staff-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+}
+
+.large-staff-card {
+    width: 200px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+}
+
+.large-staff-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+}
