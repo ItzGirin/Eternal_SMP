@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eternal SMP - Rules</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Navigation -->
+  <header class="bg-gray-900 fixed w-full z-50 top-0 left-0 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <a href="index1.html" class="text-yellow-400 font-extrabold text-2xl">Eternal SMP 1</a>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+          <a href="index1.html" class="hover:text-yellow-400">Home</a>
+          <a href="rules1.html" class="text-yellow-400 font-semibold">Rules</a>
+          <a href="staff1.html" class="hover:text-yellow-400">Staff</a>
+          <a href="season-history1.html" class="hover:text-yellow-400">Season History</a>
+          <a href="#" class="hover:text-yellow-400" target="_blank" rel="noopener noreferrer">Discord</a>
+          <a href="#" class="hover:text-yellow-400" target="_blank" rel="noopener noreferrer">Support</a>
+        </nav>
+        <div class="md:hidden">
+          <button id="nav-toggle" aria-label="Toggle navigation" class="focus:outline-none focus:ring-2 focus:ring-yellow-400">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:block bg-gray-800">
+      <a href="index1.html" class="block px-4 py-2 hover:bg-gray-700">Home</a>
+      <a href="rules1.html" class="block px-4 py-2 bg-yellow-600 font-semibold">Rules</a>
+      <a href="staff1.html" class="block px-4 py-2 hover:bg-gray-700">Staff</a>
+      <a href="season-history1.html" class="block px-4 py-2 hover:bg-gray-700">Season History</a>
+      <a href="#" class="block px-4 py-2 hover:bg-gray-700" target="_blank" rel="noopener noreferrer">Discord</a>
+      <a href="#" class="block px-4 py-2 hover:bg-gray-700" target="_blank" rel="noopener noreferrer">Support</a>
+    </div>
+  </header>
+
+  <main class="pt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="text-center mb-12">
+      <h1 class="text-5xl font-extrabold mb-4">Server Rules</h1>
+      <p class="text-lg max-w-xl mx-auto mb-8">Please read and follow the rules to ensure a fun and fair experience for everyone.</p>
+      <ul class="list-disc list-inside max-w-xl mx-auto text-left space-y-3 text-lg">
+        <li>No griefing or stealing from other players.</li>
+        <li>Respect all players and staff members.</li>
+        <li>No cheating, hacking, or exploiting bugs.</li>
+        <li>Keep chat friendly and free of offensive language.</li>
+        <li>Follow all instructions given by staff members.</li>
+        <li>Use appropriate builds and skins.</li>
+        <li>Report any rule violations to staff.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

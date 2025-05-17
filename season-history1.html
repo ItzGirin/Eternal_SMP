@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eternal SMP - Season History</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Navigation -->
+  <header class="bg-gray-900 fixed w-full z-50 top-0 left-0 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <a href="index1.html" class="text-yellow-400 font-extrabold text-2xl">Eternal SMP 1</a>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+          <a href="index1.html" class="hover:text-yellow-400">Home</a>
+          <a href="rules1.html" class="hover:text-yellow-400">Rules</a>
+          <a href="staff1.html" class="hover:text-yellow-400">Staff</a>
+          <a href="season-history1.html" class="text-yellow-400 font-semibold">Season History</a>
+          <a href="#" class="hover:text-yellow-400" target="_blank" rel="noopener noreferrer">Discord</a>
+          <a href="#" class="hover:text-yellow-400" target="_blank" rel="noopener noreferrer">Support</a>
+        </nav>
+        <div class="md:hidden">
+          <button id="nav-toggle" aria-label="Toggle navigation" class="focus:outline-none focus:ring-2 focus:ring-yellow-400">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:block bg-gray-800">
+      <a href="index1.html" class="block px-4 py-2 hover:bg-gray-700">Home</a>
+      <a href="rules1.html" class="block px-4 py-2 hover:bg-gray-700">Rules</a>
+      <a href="staff1.html" class="block px-4 py-2 hover:bg-gray-700">Staff</a>
+      <a href="season-history1.html" class="block px-4 py-2 bg-yellow-600 font-semibold">Season History</a>
+      <a href="#" class="block px-4 py-2 hover:bg-gray-700" target="_blank" rel="noopener noreferrer">Discord</a>
+      <a href="#" class="block px-4 py-2 hover:bg-gray-700" target="_blank" rel="noopener noreferrer">Support</a>
+    </div>
+  </header>
+
+  <main class="pt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="text-center mb-12">
+      <h1 class="text-5xl font-extrabold mb-4">Season History Gallery</h1>
+      <p class="text-lg max-w-xl mx-auto mb-8">Explore the highlights and videos from past seasons of Eternal SMP.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Example season card -->
+        <div class="bg-gray-800 rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-2">Season 13</h2>
+          <p>Theme: [Season 13 theme]. Features: [Features of Season 13]. Updates: [Updates and additions in Season 13].</p>
+          <a href="https://www.youtube.com/watch?v=m5R5Bxsc2Sk&pp=0gcJCY0JAYcqIYzv" target="_blank" class="inline-block mt-4">
+            <img src="https://i.ytimg.com/an_webp/m5R5Bxsc2Sk/mqdefault_6s.webp?du=3000&sqp=CNPSoMEG&rs=AOn4CLAjWPp5g_0J9EhdFnoH4OlYQijw" alt="Season 13 Video Thumbnail" class="w-full h-48 object-cover rounded-md" />
+          </a>
+        </div>
+        <!-- Repeat for other seasons -->
+        <div class="bg-gray-800 rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-2">Season 12</h2>
+          <p>Theme: [Season 12 theme]. Features: [Features of Season 12]. Updates: [Updates and additions in Season 12].</p>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="inline-block mt-4">
+            <img src="images/video_thumbnail.jpg" alt="Season 12 Video Thumbnail" class="w-full h-48 object-cover rounded-md" />
+          </a>
+        </div>
+        <div class="bg-gray-800 rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-2">Season 11</h2>
+          <p>Theme: [Season 11 theme]. Features: [Features of Season 11]. Updates: [Updates and additions in Season 11].</p>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="inline-block mt-4">
+            <img src="images/video_thumbnail.jpg" alt="Season 11 Video Thumbnail" class="w-full h-48 object-cover rounded-md" />
+          </a>
+        </div>
+        <!-- Add more seasons as needed -->
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
