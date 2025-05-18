@@ -3,9 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet" />
+  <style>
+    .font-nexabold, .nexa-bold {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+    .nexa-light {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+    }
+  </style>
   <link rel="stylesheet" href="32512190d9fd2a09.css" />
   <link rel="stylesheet" href="e6de8a829be95ddb.css" />
- <link rel="stylesheet" href="fonts.css" />
   <title>EternalSMP | Home</title>
   <meta name="description" content="EternalSMP Minecraft server based in Indonesia, one of the biggest in Southeast Asia." />
   <link rel="icon" href="logo tulisan eternal.png" type="image/x-icon" sizes="16x16" />
@@ -106,6 +116,10 @@
 <body style="background-color: #1e1e1e; color: white;">
   <div id="introOverlay">
     <img id="introLogo" src="logo_eternal-removebg-preview.png" alt="EternalSMP Logo" />
+    <h1 id="introText" class="font-nexabold mt-5 text-white text-2xl sm:text-3xl md:text-4xl opacity-0">Keabadian Ini Like Never Before</h1>
+    <div id="progressBarContainer" style="width: 80%; height: 4px; background: #444; margin-top: 30px;">
+      <div id="progressBar" style="width: 0%; height: 100%; background: yellow;"></div>
+    </div>
   </div>
   <main class="scroll-smooth" style="background-color: #1e1e1e;">
     <!-- Navigation Logo -->
@@ -363,26 +377,45 @@
   </main>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const introOverlay = document.getElementById("introOverlay");
-      const introLogo = document.getElementById("introLogo");
+      const overlay = document.getElementById("introOverlay");
+      const logo = document.getElementById("introLogo");
+      const text = document.getElementById("introText");
+      const progress = document.getElementById("progressBar");
 
-      // Animate the logo: scale up and fade out
+      // Progress bar animation
+      anime({
+        targets: progress,
+        width: '100%',
+        easing: 'easeInOutQuad',
+        duration: 2500
+      });
+
+      // Logo and text animation timeline
       anime.timeline({
         easing: 'easeOutExpo',
         duration: 1000,
-        complete: () => {
-          // Hide the overlay after animation
-          introOverlay.style.display = 'none';
-        }
       })
       .add({
-        targets: introLogo,
-        scale: [1, 1.2],
+        targets: logo,
+        scale: [0.8, 1.1],
+        opacity: [0, 1],
+        duration: 1200
+      })
+      .add({
+        targets: text,
+        opacity: [0, 1],
+        translateY: [20, 0],
+        delay: 300
+      })
+      .add({
+        targets: overlay,
         opacity: [1, 0],
-        duration: 1500,
-        delay: 500
+        duration: 1000,
+        delay: 1000,
+        complete: () => {
+          overlay.style.display = 'none';
+        }
       });
     });
   </script>
  </body>
-</html>
