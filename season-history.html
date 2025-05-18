@@ -10,35 +10,130 @@
   <link rel="icon" href="logo tulisan eternal.png" type="image/x-icon" sizes="16x16" />
 </head>
 <body>
-  <main class="scroll-smooth bg-blackln">
+  <main class="scroll-smooth bg-blackln" style="padding-top: 120px;">
     <!-- Navigation Logo: Change the src below to update the top navigation logo -->
 <header id="mainHeader" class="fixed top-1 left-0 right-0 bg-header rounded-md mx-1 sm:mx-2 md:mx-3 lg:mx-4 z-10">
-        <div class="flex items-center justify-between lg:justify-end" aria-label="Global">
-          <div class="flex" dir="ltr">
-<a aria-current="page" class="bg-primary rounded-tl-md rounded-bl-md" href="/id">
-  <img alt="EternalSMP Logo" loading="lazy" width="150" height="150" src="logo_eternal-removebg-preview.png" style="filter: drop-shadow(0 0 10px yellow); transition: filter 0.3s ease-in-out;" onmouseover="this.style.filter='drop-shadow(0 0 20px yellow)'" onmouseout="this.style.filter='drop-shadow(0 0 10px yellow)'" />
-</a>
-          </div>
-          <div class="hidden lg:flex lg:gap-x-[50px] mx-20 font-nexabold">
-            <a aria-current="page" class="text-sm font-semibold leading-6 text-white" href="/index.html">Home</a>
-            <a class="text-sm font-semibold leading-6 text-white" href="/rules.html">Rules</a>
+  <div class="flex items-center justify-between lg:justify-start">
+    
+    <!-- Logo -->
+    <div class="logo-container flex items-center" dir="ltr">
+      <a aria-current="page" class="bg-primary rounded-tl-md rounded-bl-md" href="/id">
+        <img alt="EternalSMP Logo" loading="lazy" width="150" height="150" src="logo_eternal-removebg-preview.png" style="filter: drop-shadow(0 0 10px yellow);" />
+      </a>
+    </div>
+    
+    <!-- Hamburger Button -->
+    <div class="lg:hidden flex items-center">
+      <button id="hamburgerButton" class="text-white focus:outline-none">
+        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
 
-            <a class="text-sm font-semibold leading-6 text-white" target="_blank" href="https://discord.  gg/N6k5MbMt">Discord</a>
-            <a class="text-sm font-semibold leading-6 text-white" href="/staff.html">Staff</a>
-            <a class="text-sm font-semibold leading-6 text-white" href="/season-history.html">Season History</a>
-          </div>
-          <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:px-4">
-            <a class="flex items-center bg-primary text-blackln font-nexabold rounded-sm px-5 py-3" target="_blank" href="https://support">Support</a>
-          </div>
-        </div>
-      </header>
+    <!-- Navigation Menu -->
+    <nav id="navMenu" class="lg:flex font-nexabold hidden">
+      <a aria-current="page" href="/index.html">Home</a>
+      <a href="/rules.html">Rules</a>
+      <a target="_blank" href="https://discord.gg/N6k5MbMt">Discord</a>
+      <a href="/staff.html">Staff</a>
+      <a href="/season-history.html">Season History</a>
+    </nav>
+
+    <!-- Support Button -->
+    <div id="supportButton" class="hidden lg:flex lg:flex-1 lg:justify-end lg:px-4">
+      <a class="flex items-center bg-primary text-blackln font-nexabold rounded-sm px-5 py-3" target="_blank" href="https://sociabuzz.com/marcellnw/tribe">Support</a>
+    </div>
+  </div>
+
+  <style>
+    /* Dropdown Menu */
+    #navMenu {
+      transition: max-height 0.3s ease-out;
+      overflow: hidden;
+      max-height: 0;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      margin-top: 10px;
+      position: absolute;
+      right: 10px;
+      top: 70px;
+      z-index: 50;
+    }
+
+    #navMenu.show {
+      max-height: 500px;
+    }
+
+    #navMenu a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: white;
+      border-bottom: 1px solid #333;
+    }
+
+    #navMenu a:last-child {
+      border-bottom: none;
+    }
+
+    #navMenu a:hover {
+      background-color: #333;
+    }
+
+    /* Responsive Settings */
+    @media (min-width: 1024px) {
+      #navMenu {
+        display: flex !important;
+        max-height: none;
+        background-color: transparent;
+        flex-direction: row;
+        position: static;
+        margin-top: 0;
+        gap: 40px;
+        align-items: center;
+      }
+      #hamburgerButton {
+        display: none;
+      }
+      #navMenu a {
+        border-bottom: none;
+        padding: 0;
+      }
+    }
+
+    /* Header layout improvements */
+    #mainHeader > div {
+      padding: 0 20px;
+      gap: 20px;
+    }
+
+    .logo-container {
+      flex-shrink: 0;
+      margin-right: 30px;
+    }
+
+    #supportButton {
+      margin-left: auto;
+    }
+  </style>
+
+  <script>
+    const hamburgerButton = document.getElementById("hamburgerButton");
+    const navMenu = document.getElementById("navMenu");
+
+    hamburgerButton.addEventListener("click", () => {
+      navMenu.classList.toggle("hidden");
+      navMenu.classList.toggle("show");
+    });
+  </script>
+</header>
   <title>Season History</title>
   <link rel="stylesheet" href="staff-card.css" />
   <style>
     body {
-      background-color: #000;
+      background-color: #1e1e1e;
       color: white;
-      font-family: Arial, sans-serif;
       padding: 20px;
     }
     h1 {
@@ -111,7 +206,9 @@
   </style>
 
 
-    <h1>Season History Gallery</h1>
+
+
+    <h1>Season History </h1>
     <!-- Seasons 1 to 13 -->
     <div class="gallery-container">
       <!-- Repeat for each season -->
@@ -122,7 +219,7 @@
         <div class="photo-gallery">
           <div class="mini-large-staff-card" style="background: #222; padding: 5px; border-radius: 8px;">
             <a href="https://youtu.be/m5R5Bxsc2Sk?si=9Dle8SKbOcsxmwO2" target="_blank" title="Season 1 Video">
-              <img src="https://i.ytimg.com/an_webp/m5R5Bxsc2Sk/mqdefault_6s.webp?du=3000&sqp=CNPSoMEG&rs=AOn4CLAjWPp5t3g_0J9EhdFnoH4OlYQijw" alt="Season 1 Video Thumbnail" />
+              <img src="https://i.ytimg.com/an_webp/m5R5Bxsc2Sk/mqdefault_6s.webp?du=3000&sqp=CJvVpMEG&rs=AOn4CLBDQIanONW0Zd0EYYcBfRGRIR7e8Q" alt="Season 1 Video Thumbnail" />
             </a>
           </div>
         </div>
@@ -133,7 +230,7 @@
         <div class="photo-gallery">
           <div class="mini-large-staff-card" style="background: #222; padding: 5px; border-radius: 8px;">
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" title="Season 1 Video">
-              <img src="images/video_thumbnail.jpg" alt="Season 1 Video Thumbnail" />
+              <img src="https://i.ytimg.com/vi/Ui6A0YcGXwc/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDcs0ywnn0JaA00zqRY9ma8MI7Lhg" alt="Season 1 Video Thumbnail" />
             </a>
           </div>
         </div>

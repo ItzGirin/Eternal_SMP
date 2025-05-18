@@ -1,5 +1,5 @@
-  <!DOCTYPE html>
-<html lang="id" class="scroll-smooth focus:scroll-auto">
+<!DOCTYPE html>
+<html lang="id">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,60 +8,256 @@
   <title>EternalSMP | Home</title>
   <meta name="description" content="EternalSMP Minecraft server based in Indonesia, one of the biggest in Southeast Asia." />
   <link rel="icon" href="logo tulisan eternal.png" type="image/x-icon" sizes="16x16" />
-</head>
-<body>
-  <main class="scroll-smooth bg-blackln">
-    <!-- Navigation Logo: Change the src below to update the top navigation logo -->
-<header id="mainHeader" class="fixed top-1 left-0 right-0 bg-header rounded-md mx-1 sm:mx-2 md:mx-3 lg:mx-4 z-10">
-        <div class="flex items-center justify-between lg:justify-end" aria-label="Global">
-          <div class="flex" dir="ltr">
-            <a aria-current="page" class="bg-primary rounded-tl-md rounded-bl-md" href="/id">
-              <img alt="EternalSMP Logo" loading="lazy" width="150" height="150" src="logo_eternal-removebg-preview.png" style="filter: drop-shadow(0 0 10px yellow); transition: filter 0.3s ease-in-out;" onmouseover="this.style.filter='drop-shadow(0 0 20px yellow)'" onmouseout="this.style.filter='drop-shadow(0 0 10px yellow)'" />
-            </a>
-          </div>
-          <div class="hidden lg:flex lg:gap-x-[50px] mx-20 font-nexabold">
-            <a aria-current="page" class="text-sm font-semibold leading-6 text-white" href="/index.html">Home</a>
-            <a class="text-sm font-semibold leading-6 text-white" href="/rules.html">Rules</a>
+  <style>
+    /* Dropdown Menu */
+    #navMenu {
+      transition: max-height 0.3s ease-out;
+      overflow: hidden;
+      max-height: 0;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      margin-top: 10px;
+      position: absolute;
+      right: 10px;
+      top: 70px;
+      z-index: 50;
+    }
 
-            <a class="text-sm font-semibold leading-6 text-white" target="_blank" href="https://discord.  gg/N6k5MbMt">Discord</a>
-            <a class="text-sm font-semibold leading-6 text-white" href="/staff.html">Staff</a>
-            <a class="text-sm font-semibold leading-6 text-white" href="/season-history.html">Season History</a>
-          </div>
-          <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:px-4">
-            <a class="flex items-center bg-primary text-blackln font-nexabold rounded-sm px-5 py-3" target="_blank" href="https://support">Support</a>
+    #navMenu.show {
+      max-height: 500px;
+    }
+
+    #navMenu a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: white;
+      border-bottom: 1px solid #333;
+    }
+
+    #navMenu a:last-child {
+      border-bottom: none;
+    }
+
+    #navMenu a:hover {
+      background-color: #333;
+    }
+
+    /* Responsive Settings */
+    @media (min-width: 1024px) {
+      #navMenu {
+        display: flex !important;
+        max-height: none;
+        background-color: transparent;
+        flex-direction: row;
+        position: static;
+        margin-top: 0;
+        gap: 40px;
+        align-items: center;
+      }
+      #hamburgerButton {
+        display: none;
+      }
+      #navMenu a {
+        border-bottom: none;
+        padding: 0;
+      }
+    }
+
+    /* Header layout improvements */
+    #mainHeader > div {
+      padding: 0 20px;
+      gap: 20px;
+    }
+
+    .logo-container {
+      flex-shrink: 0;
+      margin-right: 30px;
+    }
+
+    #supportButton {
+      margin-left: auto;
+    }
+
+    /* Intro animation overlay styles */
+    #introOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #1e1e1e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      flex-direction: column;
+    }
+
+    #introLogo {
+      width: 200px;
+      height: auto;
+      filter: drop-shadow(0 0 10px yellow);
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+</head>
+<body style="background-color: #1e1e1e; color: white;">
+  <div id="introOverlay">
+    <img id="introLogo" src="logo_eternal-removebg-preview.png" alt="EternalSMP Logo" />
+  </div>
+  <main class="scroll-smooth" style="background-color: #1e1e1e;">
+    <!-- Navigation Logo -->
+<header id="mainHeader" class="fixed top-1 left-0 right-0 bg-header rounded-md mx-1 sm:mx-2 md:mx-3 lg:mx-4 z-10">
+  <div class="flex items-center justify-between lg:justify-start">
+    
+    <!-- Logo -->
+    <div class="logo-container flex items-center" dir="ltr">
+      <a aria-current="page" class="bg-primary rounded-tl-md rounded-bl-md" href="/id">
+        <img alt="EternalSMP Logo" loading="lazy" width="150" height="150" src="logo_eternal-removebg-preview.png" style="filter: drop-shadow(0 0 10px yellow);" />
+      </a>
+    </div>
+    
+    <!-- Hamburger Button -->
+    <div class="lg:hidden flex items-center">
+      <button id="hamburgerButton" class="text-white focus:outline-none">
+        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav id="navMenu" class="lg:flex font-nexabold hidden">
+      <a aria-current="page" href="/index.html">Home</a>
+      <a href="/rules.html">Rules</a>
+      <a target="_blank" href="https://discord.gg/N6k5MbMt">Discord</a>
+      <a href="/staff.html">Staff</a>
+      <a href="/season-history.html">Season History</a>
+    </nav>
+
+    <!-- Support Button -->
+    <div id="supportButton" class="hidden lg:flex lg:flex-1 lg:justify-end lg:px-4">
+      <a class="flex items-center bg-primary text-blackln font-nexabold rounded-sm px-5 py-3" target="_blank" href="https://sociabuzz.com/marcellnw/tribe">Support</a>
+    </div>
+  </div>
+
+  <style>
+    /* Dropdown Menu */
+    #navMenu {
+      transition: max-height 0.3s ease-out;
+      overflow: hidden;
+      max-height: 0;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      margin-top: 10px;
+      position: absolute;
+      right: 10px;
+      top: 70px;
+      z-index: 50;
+    }
+
+    #navMenu.show {
+      max-height: 500px;
+    }
+
+    #navMenu a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: white;
+      border-bottom: 1px solid #333;
+    }
+
+    #navMenu a:last-child {
+      border-bottom: none;
+    }
+
+    #navMenu a:hover {
+      background-color: #333;
+    }
+
+    /* Responsive Settings */
+    @media (min-width: 1024px) {
+      #navMenu {
+        display: flex !important;
+        max-height: none;
+        background-color: transparent;
+        flex-direction: row;
+        position: static;
+        margin-top: 0;
+        gap: 40px;
+        align-items: center;
+      }
+      #hamburgerButton {
+        display: none;
+      }
+      #navMenu a {
+        border-bottom: none;
+        padding: 0;
+      }
+    }
+
+    /* Header layout improvements */
+    #mainHeader > div {
+      padding: 0 20px;
+      gap: 20px;
+    }
+
+    .logo-container {
+      flex-shrink: 0;
+      margin-right: 30px;
+    }
+
+    #supportButton {
+      margin-left: auto;
+    }
+  </style>
+
+  <script>
+    const hamburgerButton = document.getElementById("hamburgerButton");
+    const navMenu = document.getElementById("navMenu");
+
+    hamburgerButton.addEventListener("click", () => {
+      navMenu.classList.toggle("hidden");
+      navMenu.classList.toggle("show");
+    });
+  </script>
+</header>
+  </main>
+
+  <!-- Script untuk Hamburger Menu -->
+</body>
+</html>
+
+<section id="hero" class="h-screen w-full flex items-center relative bg-blend-soft-light bg-center bg-no-repeat bg-cover">
+  <div class="absolute container my-auto lg:mx-20">
+    <div class="flex flex-wrap w-full space-y-2 items-center pt-40 sm:pt-[150px] md:pt-[150px] lg:pt-0">
+      <div class="w-full self-center lg:w-1/2 space-y-2">
+        <h1 class="text-3xl md:text-3xl lg:text-5xl text-center text-white lg:text-left font- bold font-nexabold underline-offset-1">Keabadian Ini </h1>
+        <h1 class="text-center lg:text-left text-3xl md:text-3xl lg:text-5xl text-white font-nexabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-orange-500 drop-shadow-lg">Like Never Before</h1>
+        <div class="flex lg:justify-start justify-center gap-5">
+          <div class="flex flex-col gap-5 pt-5 font-nexabold lg:justify-start">
+            <span class="text-red-400 text-2xl flex items-center gap-4">
+              <div></div>
+            </span>
+            <button aria-label="How To Play" type="button" id="playNowBtn" class="cursor-pointer font-nexabold py-4 px-4 rounded-sm bg-primary drop-shadow-lg text-3xl text-black italic hover:bg-primaryhover hover:text-white">PLAY NOW</button>
           </div>
         </div>
-      </header>
-      <section id="hero" class="h-screen w-full flex items-center relative bg-blend-soft-light bg-center bg-no-repeat bg-cover">
-        <img alt="" style="object-position:center;layout:fill;width:100%;height:100%;object-fit:cover" />
-        <div class="absolute container my-auto lg:mx-20">
-          <div class="flex flex-wrap w-full space-y-2 items-center pt-40 sm:pt-[150px] md:pt-[150px] lg:pt-0">
-            <div class="w-full self-center lg:w-1/2 space-y-2">
-              <h1 class="text-3xl md:text-3xl lg:text-5xl text-center text-white lg:text-left font- bold font-nexabold underline-offset-1">Keabadian Ini </h1>
-              <h1 class="text-center lg:text-left text-3xl md:text-3xl lg:text-5xl text-white font-nexabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-orange-500 drop-shadow-lg">Like Never Before</h1>
-              <div class="flex lg:justify-start justify-center gap-5">
-                <div class="flex flex-col gap-5 pt-5 font-nexabold lg:justify-start">
-                  <span class="text-red-400 text-2xl flex items-center gap-4">
-                    <div></div>
-                  </span>
-                  <button aria-label="How To Play" type="button" id="playNowBtn" class="cursor-pointer font-nexabold py-4 px-4 rounded-sm bg-primary drop-shadow-lg text-3xl text-black italic hover:bg-primaryhover hover:text-white">PLAY NOW</button>
-                </div>
-              </div>
-            </div>
-            <div class="w-full self-end px-4 relative lg:w-1/2">
-              <div class="lg:absolute h-full w-full top-0 right-0 lg:-top-[450px] md:-top-[90px] md:-bottom-[250px] lg:-bottom-[250px]">
-                <img alt="Crystal" loading="lazy" width="1000" height="1000" decoding="async" data-nimg="1" style="color:transparent" srcset="image_3.jpg 1x, image_1.jpg 2x" src="image_1.jpg" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
+      <div class="w-full self-end px-4 relative lg:w-1/2">
+        <div class="lg:absolute h-full w-full top-0 right-0 lg:-top-[450px] md:-top-[90px] md:-bottom-[250px] lg:-bottom-[250px]">
+         
+      </div>
+    </div>
+  </div>
+</section>
       <section id="server-info" class="hidden h-screen w-full flex flex-col items-center justify-center bg-black bg-opacity-90 text-white p-10">
-        <h2 class="font-nexabold text-4xl mb-6">Welcome to EternalSMP Server</h2>
+        <h2 class="font-nexabold text-4xl mb-6 text-center w-full">Welcome to EternalSMP Server</h2>
         <p class="max-w-3xl text-center mb-6"
         </p>
-        <div class="mb-6">
-          <label for="server-ip" class="block mb-2 font-semibold">Minecraft Server IP</label>
+        <div class="mb-6 w-full flex flex-col items-center justify-center gap-4">
+          <label for="server-ip" class="block mb-2 font-semibold text-center w-full">Minecraft Server IP</label>
           <div class="flex flex-col items-center justify-center gap-4">
             <input type="text" id="server-ip" class="text-black p-2 rounded text-center" value="ip-103-42-116-60.raznar-net.my.id" readonly />
             <div class="flex gap-4">
@@ -164,5 +360,28 @@
         </div>
       </footer>
   </main>
-</body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const introOverlay = document.getElementById("introOverlay");
+      const introLogo = document.getElementById("introLogo");
+
+      // Animate the logo: scale up and fade out
+      anime.timeline({
+        easing: 'easeOutExpo',
+        duration: 1000,
+        complete: () => {
+          // Hide the overlay after animation
+          introOverlay.style.display = 'none';
+        }
+      })
+      .add({
+        targets: introLogo,
+        scale: [1, 1.2],
+        opacity: [1, 0],
+        duration: 1500,
+        delay: 500
+      });
+    });
+  </script>
+ </body>
 </html>

@@ -6,6 +6,8 @@
     padding: 10px;
     margin: 10px;
     color: white;
+    font-family: 'Nexa Bold', Arial, sans-serif;
+    font-weight: bold;
 }
 
 .staff-card img {
@@ -22,10 +24,11 @@
     padding: 10px;
     margin: 10px;
     color: white;
+    font-family: 'Nexa Bold', Arial, sans-serif;
+    font-weight: bold;
 }
 
 .large-staff-card img {
     width: 150px;
     height: 150px;
     border-radius: 5px;
-}

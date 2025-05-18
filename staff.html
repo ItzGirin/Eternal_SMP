@@ -6,44 +6,133 @@
   <link rel="stylesheet" href="rwlnPWKDLKyE.css" />
   <link rel="stylesheet" href="tYXMKe7JlUx3.css" />
   <link rel="stylesheet" href="staff-card.css" />
+  <link rel="stylesheet" href="fonts.css" />
   <title>EternalSMP | Staff</title>
   <meta name="description" content="Meet our staff team! Our staff team is always ready to help you with any problems you may have!" />
   <link rel="icon" href="logo tulisan eternal.png" type="image/x-icon" sizes="16x16" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 </head>
-<body data-aos-delay="50" data-aos-duration="350" data-aos-easing="ease-out-back" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center">
-  <main class="scroll-smooth bg-blackln" data-aos-mirror="true">
-<header class="fixed top-1 left-0 right-0 bg-header rounded-md mx-1 sm:mx-2 md:mx-3 lg:mx-4 z-10">
-      <div class="flex items-center justify-between lg:justify-end" aria-label="Global">
-        <div class="flex" dir="ltr">
-<a aria-current="page" class="bg-primary rounded-tl-md rounded-bl-md" href="/id">
-  <img alt="EternalSMP Logo" loading="lazy" width="150" height="150" src="logo_eternal-removebg-preview.png" style="filter: drop-shadow(0 0 10px yellow); transition: filter 0.3s ease-in-out;" onmouseover="this.style.filter='drop-shadow(0 0 20px yellow)'" onmouseout="this.style.filter='drop-shadow(0 0 10px yellow)'" />
-</a>
-        </div>
-        <div class="flex lg:hidden px-5 text-white">
-          <button class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white" type="button" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-6 w-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-          </button>
-        </div>
-        <div class="hidden lg:flex lg:gap-x-[50px] mx-20 font-nexabold">
-          <a aria-current="page" class="text-sm font-semibold leading-6 text-white" href="index.html">Home</a>
-          <a class="text-sm font-semibold leading-6 text-white" href="rules.html">Rules</a>
+<body style="background-color: #1e1e1e; color: white;">
+  <main class="scroll-smooth" style="background-color: #1e1e1e;">
+<header id="mainHeader" class="fixed top-1 left-0 right-0 bg-header rounded-md mx-1 sm:mx-2 md:mx-3 lg:mx-4 z-10">
+  <div class="flex items-center justify-between lg:justify-start">
+    
+    <!-- Logo -->
+    <div class="logo-container flex items-center" dir="ltr">
+      <a aria-current="page" class="bg-primary rounded-tl-md rounded-bl-md" href="/id">
+        <img alt="EternalSMP Logo" loading="lazy" width="150" height="150" src="logo_eternal-removebg-preview.png" style="filter: drop-shadow(0 0 10px yellow);" />
+      </a>
+    </div>
+    
+    <!-- Hamburger Button -->
+    <div class="lg:hidden flex items-center">
+      <button id="hamburgerButton" class="text-white focus:outline-none">
+        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
 
-          <a class="text-sm font-semibold leading-6 text-white" target="_blank" href="https://discord.gg/luckynetwork">Discord</a>
-          <a class="text-sm font-semibold leading-6 text-white" href="staff.html">Staff</a>
-          <a class="text-sm font-semibold leading-6 text-white" href="/season-history.html">Season History</a>
-        </div>
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:px-4">
-<a class="flex items-center bg-primary text-blackln font-nexabold font-bold rounded-sm px-5 py-3" target="_blank" href="https://support">Support</a>
-        </div>
-      </div>
-    </header>
+    <!-- Navigation Menu -->
+    <nav id="navMenu" class="lg:flex font-nexabold font-bold hidden">
+      <a aria-current="page" href="/index.html">Home</a>
+      <a href="/rules.html">Rules</a>
+      <a target="_blank" href="https://discord.gg/N6k5MbMt">Discord</a>
+      <a href="/staff.html">Staff</a>
+      <a href="/season-history.html">Season History</a>
+    </nav>
+
+    <!-- Support Button -->
+    <div id="supportButton" class="hidden lg:flex lg:flex-1 lg:justify-end lg:px-4">
+      <a class="flex items-center bg-primary text-blackln font-nexabold rounded-sm px-5 py-3" target="_blank" href="https://sociabuzz.com/marcellnw/tribe">Support</a>
+    </div>
+  </div>
+
+  <style>
+    /* Dropdown Menu */
+    #navMenu {
+      transition: max-height 0.3s ease-out;
+      overflow: hidden;
+      max-height: 0;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      margin-top: 10px;
+      position: absolute;
+      right: 10px;
+      top: 70px;
+      z-index: 50;
+    }
+
+    #navMenu.show {
+      max-height: 500px;
+    }
+
+    #navMenu a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: white;
+      border-bottom: 1px solid #333;
+    }
+
+    #navMenu a:last-child {
+      border-bottom: none;
+    }
+
+    #navMenu a:hover {
+      background-color: #333;
+    }
+
+    /* Responsive Settings */
+    @media (min-width: 1024px) {
+      #navMenu {
+        display: flex !important;
+        max-height: none;
+        background-color: transparent;
+        flex-direction: row;
+        position: static;
+        margin-top: 0;
+        gap: 40px;
+        align-items: center;
+      }
+      #hamburgerButton {
+        display: none;
+      }
+      #navMenu a {
+        border-bottom: none;
+        padding: 0;
+      }
+    }
+
+    /* Header layout improvements */
+    #mainHeader > div {
+      padding: 0 20px;
+      gap: 20px;
+    }
+
+    .logo-container {
+      flex-shrink: 0;
+      margin-right: 30px;
+    }
+
+    #supportButton {
+      margin-left: auto;
+    }
+  </style>
+
+  <script>
+    const hamburgerButton = document.getElementById("hamburgerButton");
+    const navMenu = document.getElementById("navMenu");
+
+    hamburgerButton.addEventListener("click", () => {
+      navMenu.classList.toggle("hidden");
+      navMenu.classList.toggle("show");
+    });
+  </script>
+</header>
     <section id="staff-section" class="bg-fixed bg-gradient-to-r from-green-900 to-green-700">
       <div class="flex flex-col gap-4 items-center justify-center align-middle pt-[200px] pb-[70px]">
-<h1 class="text-3xl md:text-4xl lg:text-5xl text-white font-nexabold text-center" style="font-family:'Montserrat', sans-serif; font-weight: 700;">Daftar Staff</h1>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl text-white font-nexabold font-bold text-center">Daftar Staff</h1>
       </div>
     </section>
     <section id="staff-card" class="shadow-xl bg-gradient-to-r from-yellow-400 via-green-500 to-yellow-500 background-animate py-20">
@@ -188,5 +277,17 @@
         </div>
       </footer>
   </main>
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById("dropdownMenu");
+      dropdown.classList.toggle("hidden");
+    }
+
+    // Menutup dropdown jika klik di luar
+    window.addEventListener("click", function (e) {
+      if (!document.getElementById("dropdownButton").contains(e.target)) {
+        document.getElementById("dropdownMenu").classList.add("hidden");
+      }
+    });
+  </script>
 </body>
-</html>
